@@ -2,58 +2,41 @@
 	export const prerender = true;
 </script>
 
-<script>
-	import Counter from '$lib/Counter.svelte';
-</script>
-
 <svelte:head>
-	<title>Home</title>
+	<title>LIDI - Peduli Disleksia</title>
 </svelte:head>
 
-<section>
-	<h1>
-		<div class="welcome">
-			<picture>
-				<source srcset="svelte-welcome.webp" type="image/webp" />
-				<img src="svelte-welcome.png" alt="Welcome" />
-			</picture>
-		</div>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/index.svelte</strong>
-	</h2>
-
-	<Counter />
+<section
+	class="bg-teal-300 h-screen w-100 flex flex-col justify-center items-center bg-cover bg-center"
+>
+	<div class="text-center mb-5">
+		<h1 class="font-riangriung text-6xl">
+			<span class="text-blue-700">L</span><span class="text-orange-600">I</span><span
+				class="text-red-600">D</span
+			><span class="text-green-800">I</span>
+		</h1>
+		<h2 class="text-lg font-bold">Peduli Disleksia</h2>
+	</div>
+	<button class="main-button">Panduan</button>
+	<button class="main-button">Masuk</button>
+	<button class="main-button">Buat Akun</button>
+	<button class="bg-transparent mt-3 hover:underline inline-block">
+		Lanjutkan Tanpa Akun <i class="ld-arrow-right text-lg inline-block align-middle" />
+	</button>
 </section>
 
-<style>
+<style lang="postcss">
+	@tailwind components;
+
 	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 1;
+		background-image: url('/images/landing-background.jpg');
 	}
 
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
+	@layer components {
+		.main-button {
+			@apply bg-teal-700 text-white p-3 mt-4 rounded-3xl uppercase transition-all;
+			@apply w-5/6 sm:w-3/4 md:w-3/6 lg:w-2/6;
+			@apply hover:bg-teal-800;
+		}
 	}
 </style>
