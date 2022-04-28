@@ -1,0 +1,6 @@
+{
+	"appId": "com.pedulidisleksia.app",
+	"appName": "LIDI - Peduli Disleksia",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}
