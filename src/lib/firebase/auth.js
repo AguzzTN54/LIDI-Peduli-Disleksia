@@ -7,7 +7,7 @@ import {
 	onAuthStateChanged,
 	signInAnonymously
 } from 'firebase/auth';
-import auth from './app';
+import { authApp as auth } from './app';
 
 const provider = new GoogleAuthProvider();
 const signinWithGoogle = async () => {
