@@ -6,10 +6,6 @@
 </div>
 
 <style lang="postcss">
-	@tailwind components;
-
-	@layer components {
-		.loader {
 			@apply fixed bg-white/[.8] p-10 shadow-xl rounded-lg;
 			top: 50%;
 			left: 50%;
@@ -57,5 +53,4 @@
 				opacity: 0;
 			}
 		}
-	}
 </style>

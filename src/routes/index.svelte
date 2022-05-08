@@ -3,9 +3,7 @@
 </script>
 
 <script>
-	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-	import { checkAuth, signInAnonym } from '$lib/firebase/auth';
 	import Form from './_index/_form.svelte';
 
 	let formActive = false;
@@ -13,9 +11,8 @@
 
 	const navigation = (action) => {
 		formType = action;
-		formActive = ['masuk', 'daftar'].includes(action);
+		formActive = ['masuk', 'daftar', 'anonim'].includes(action);
 	};
-	onMount(checkAuth);
 </script>
 
 <svelte:head>
@@ -51,7 +48,7 @@
 			<button class="main-button" on:click={() => navigation('daftar')}>Buat Akun</button>
 			<button
 				class="bg-transparent mt-3 hover:underline inline-block text-teal-900"
-				on:click={signInAnonym}
+				on:click={() => navigation('anonim')}
 			>
 				Lanjutkan Tanpa Akun <i class="ld-arrow-right text-lg inline-block align-middle" />
 			</button>
@@ -60,17 +57,13 @@
 </section>
 
 <style lang="postcss">
-	@tailwind components;
-
 	section {
 		background-image: url('/images/landing-background.jpg');
 	}
 
-	@layer components {
-		.main-button {
-			@apply bg-teal-700 text-white text-center p-3 mt-4 rounded-3xl uppercase transition-all;
-			@apply w-full;
-			@apply hover:bg-teal-800;
-		}
+	.main-button {
+		@apply bg-teal-700 text-white text-center p-3 mt-4 rounded-3xl uppercase transition-all;
+		@apply w-full;
+		@apply hover:bg-teal-800;
 	}
 </style>

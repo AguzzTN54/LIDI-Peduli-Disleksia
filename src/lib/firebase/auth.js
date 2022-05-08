@@ -4,7 +4,6 @@ import {
 	GoogleAuthProvider,
 	createUserWithEmailAndPassword,
 	signInWithEmailAndPassword,
-	onAuthStateChanged,
 	signInAnonymously
 } from 'firebase/auth';
 import { authApp as auth } from './app';
@@ -24,13 +23,6 @@ const signinWithGoogle = async () => {
 	} catch (error) {
 		// Handle Errors here.
 		console.log(error);
-		const errorCode = error.code;
-		const errorMessage = error.message;
-		// The email of the user's account used.
-		const email = error.email;
-		// The AuthCredential type that was used.
-		const credential = GoogleAuthProvider.credentialFromError(error);
-
 		return { status: 'failed', error };
 	}
 };
@@ -71,20 +63,6 @@ const signInAnonym = async () => {
 
 const signout = async () => {
 	await signOut(auth);
-	console.log('sign out success');
 };
 
-const checkAuth = () =>
-	onAuthStateChanged(auth, (user) => {
-		if (user) {
-			// User is signed in, see docs for a list of available properties
-			// https://firebase.google.com/docs/reference/js/firebase.User
-			console.log('logged in', user);
-			console.log(auth.currentUser);
-		} else {
-			// User is signed out
-			// ...
-			console.log('signed out');
-		}
-	});
-export { signinWithGoogle, signInAnonym, signupWithEmail, signinWithEmail, checkAuth, signout };
+export { signinWithGoogle, signInAnonym, signupWithEmail, signinWithEmail, signout };
