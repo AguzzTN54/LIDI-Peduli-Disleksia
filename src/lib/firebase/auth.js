@@ -31,7 +31,6 @@ const signupWithEmail = async (email, password) => {
 	try {
 		const userCredential = await createUserWithEmailAndPassword(auth, email, password);
 		const user = userCredential.user;
-		console.log(userCredential, user);
 		return { status: 'success', user };
 	} catch (error) {
 		const codeMsg = error.code.split('/')[1];
@@ -42,7 +41,6 @@ const signupWithEmail = async (email, password) => {
 const signinWithEmail = async (email, password) => {
 	try {
 		const userCredential = await signInWithEmailAndPassword(auth, email, password);
-		console.log(userCredential);
 		return { status: 'success', userCredential };
 	} catch (error) {
 		const codeMsg = error.code.split('/')[1];
@@ -53,7 +51,6 @@ const signinWithEmail = async (email, password) => {
 const signInAnonym = async () => {
 	try {
 		const userCredential = await signInAnonymously(auth);
-		console.log(userCredential);
 		return { status: 'success', userCredential };
 	} catch (error) {
 		const codeMsg = error.code.split('/')[1];

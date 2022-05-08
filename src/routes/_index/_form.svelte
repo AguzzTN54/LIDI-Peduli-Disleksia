@@ -50,7 +50,9 @@
 			errorMessage = 'Terjadi Masalah Autentikasi';
 			return;
 		}
-		firestore.set({ uid: user.uid, name: user.displayName });
+		const { data } = await firestore.getByUid(user.uid);
+		const newUser = data === null ? true : !!data?.newUser;
+		await firestore.set({ uid: user.uid, name: user.displayName, newUser });
 		return;
 	};
 
@@ -64,7 +66,7 @@
 	const daftar = async () => {
 		const { status, codeMsg, user } = await signupWithEmail(email, password1);
 		if (status === 'success') {
-			firestore.set({ uid: user.uid, name });
+			firestore.set({ uid: user.uid, name, newUser: true });
 			errorMessage = '';
 			onRequest = false;
 			return;

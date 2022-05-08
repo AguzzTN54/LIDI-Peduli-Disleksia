@@ -15,7 +15,7 @@ const firestore = {
 	},
 
 	// eslint-disable-next-line no-unused-vars
-	async set({ name = null, uid, born = 0, score = 0 }) {
+	async set({ name = null, uid, born = 0, score = 0, newUser = false }) {
 		try {
 			const data = arguments[0];
 			const usersRef = collection(db, 'users');
@@ -34,6 +34,7 @@ const firestore = {
 
 	async getByUid(uid) {
 		try {
+			if (!uid) return;
 			const ref = await doc(db, 'users', uid);
 			const docSnap = await getDoc(ref);
 
