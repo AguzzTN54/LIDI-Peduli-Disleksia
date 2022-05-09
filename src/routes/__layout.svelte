@@ -13,8 +13,8 @@
 		onAuthStateChanged(auth, async (userData) => {
 			if (userData) {
 				const { data } = await firestore.getByUid(userData.uid);
-				const { isAnonymous, email, photoURL, uid } = userData;
-				const name = data.name || 'Anonim';
+				const { isAnonymous, email, photoURL, uid, displayName } = userData;
+				const name = displayName || data?.name || 'Anonim';
 				user.set({ name, uid, photoURL, email, isAnonymous });
 				console.log('logged in');
 				if (routeId === '') return goto('/dashboard');

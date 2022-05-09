@@ -15,9 +15,9 @@ const firestore = {
 	},
 
 	// eslint-disable-next-line no-unused-vars
-	async set({ name = null, uid, born = 0, score = 0, newUser = false }) {
+	async set(uid, { name = null, born = 0, score = 0, newUser = false }) {
 		try {
-			const data = arguments[0];
+			const data = arguments[1];
 			const usersRef = collection(db, 'users');
 			await setDoc(doc(usersRef, uid), { ...data }, { merge: true });
 		} catch (e) {

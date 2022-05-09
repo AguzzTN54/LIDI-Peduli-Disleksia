@@ -51,8 +51,9 @@
 			return;
 		}
 		const { data } = await firestore.getByUid(user.uid);
+		console.log(data);
 		const newUser = data === null ? true : !!data?.newUser;
-		await firestore.set({ uid: user.uid, name: user.displayName, newUser });
+		await firestore.set(user.uid, { name: user.displayName, newUser });
 		return;
 	};
 
@@ -66,7 +67,7 @@
 	const daftar = async () => {
 		const { status, codeMsg, user } = await signupWithEmail(email, password1);
 		if (status === 'success') {
-			firestore.set({ uid: user.uid, name, newUser: true });
+			firestore.set(user.uid, { name, newUser: true });
 			errorMessage = '';
 			onRequest = false;
 			return;

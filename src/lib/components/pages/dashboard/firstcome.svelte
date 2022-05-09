@@ -26,7 +26,7 @@
 		</button>
 		<button
 			class="bg-transparent mt-2 hover:underline inline-block text-teal-900 text-sm"
-			on:click={skipTest}
+			on:click={() => skipTest($user.uid)}
 		>
 			Lanjutkan Tanpa Tes <i class="ld-arrow-right text-lg inline-block align-middle" />
 		</button>

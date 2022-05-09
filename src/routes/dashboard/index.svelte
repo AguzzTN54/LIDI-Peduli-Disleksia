@@ -7,8 +7,8 @@
 	import { setContext } from 'svelte';
 	import firestore from '$lib/firebase/firestore';
 	import { user } from '$lib/store';
-	import Dashboard from './_dashboard.svelte';
-	import FirstCome from './_firstcome.svelte';
+	import Dashboard from '$lib/components/pages/dashboard/dashboard.svelte';
+	import Firstcome from '$lib/components/pages/dashboard/firstcome.svelte';
 
 	let firstCome = false;
 
@@ -18,8 +18,9 @@
 		return;
 	};
 
-	const skipTest = () => {
+	const skipTest = (uid) => {
 		firstCome = false;
+		firestore.set(uid, { newUser: false });
 	};
 	setContext('skipTest', skipTest);
 
@@ -33,7 +34,7 @@
 <section class="bg-cover bg-center w-full h-full bg-emerald-500">
 	<div class="w-full h-full bg-white/[.5] backdrop-blur-md flex flex-col relative">
 		{#if firstCome}
-			<FirstCome />
+			<Firstcome />
 		{:else}
 			<Dashboard />
 		{/if}

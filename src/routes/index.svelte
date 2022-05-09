@@ -4,7 +4,7 @@
 
 <script>
 	import { fade } from 'svelte/transition';
-	import Form from './_index/_form.svelte';
+	import Form from '$lib/components/pages/index/form.svelte';
 
 	let formActive = false;
 	let formType;
