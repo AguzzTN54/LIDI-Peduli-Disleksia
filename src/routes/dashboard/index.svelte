@@ -22,8 +22,8 @@
 		firstCome = false;
 		firestore.set(uid, { newUser: false });
 	};
-	setContext('skipTest', skipTest);
 
+	if (browser) setContext('skipTest', skipTest);
 	$: if (browser && $user.uid) checkFirstCome($user.uid);
 </script>
 
@@ -41,7 +41,7 @@
 	</div>
 </section>
 
-<style>
+<style lang="postcss">
 	section {
 		background-image: url('/images/landing-background.jpg');
 	}
