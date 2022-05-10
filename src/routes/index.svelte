@@ -19,17 +19,14 @@
 	<title>LIDI - Peduli Disleksia</title>
 </svelte:head>
 
-<section
-	class="bg-teal-300 h-screen w-100 flex flex-col justify-center items-center bg-cover bg-center"
-	in:fade
->
+<section class="h-screen w-100 flex flex-col justify-center items-center" in:fade>
 	<div class="text-center mb-8">
 		<h1 class="font-riangriung text-6xl">
 			<span class="text-blue-700">L</span><span class="text-orange-600">I</span><span
 				class="text-red-600">D</span
 			><span class="text-green-800">I</span>
 		</h1>
-		<h2 class="text-lg font-bold text-teal-800">Peduli Disleksia</h2>
+		<h2 class="text-lg font-semibold text-teal-800">Peduli Disleksia</h2>
 	</div>
 
 	{#if formActive}
@@ -57,10 +54,6 @@
 </section>
 
 <style lang="postcss">
-	section {
-		background-image: url('/images/landing-background.jpg');
-	}
-
 	.main-button {
 		@apply bg-teal-700 text-white text-center p-3 mt-4 rounded-3xl uppercase transition-all;
 		@apply w-full;

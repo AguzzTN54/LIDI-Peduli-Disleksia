@@ -31,7 +31,7 @@
 	<title>Dashboard | LIDI - PEDULI DISLEKSIA</title>
 </svelte:head>
 
-<section class="bg-cover bg-center w-full h-full bg-emerald-500">
+<section class="w-full h-full">
 	<div class="w-full h-full bg-white/[.5] backdrop-blur-md flex flex-col relative">
 		{#if firstCome}
 			<Firstcome />
@@ -40,9 +40,3 @@
 		{/if}
 	</div>
 </section>
-
-<style lang="postcss">
-	section {
-		background-image: url('/images/landing-background.jpg');
-	}
-</style>

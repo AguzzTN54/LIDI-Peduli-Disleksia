@@ -27,10 +27,14 @@
 	});
 </script>
 
-<main class="h-screen w-screen overflow-hidden">
+<main class="h-screen w-screen overflow-hidden bg-cover bg-center bg-emerald-500">
 	<slot />
 </main>
 
 <style global lang="postcss">
 	@import '../app.css';
+
+	main {
+		background-image: url('/images/landing-background.jpg');
+	}
 </style>

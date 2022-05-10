@@ -15,8 +15,8 @@
 		<span class="uppercase text-sm">Selamat Datang</span>
 		<h1 class="uppercase font-extrabold text-lg sm:text-2xl text-teal-700">{$user.name}</h1>
 		<p class="mt-5 mb-5">
-			Lakukan <b>Tes Disleksia</b> terlebih dahulu untuk mengukur seberapa besar masalah disleksia yang
-			sedang dialami.
+			Lakukan <span class="font-semibold">Tes Disleksia</span> terlebih dahulu untuk mengukur seberapa
+			besar masalah disleksia yang sedang dialami.
 		</p>
 		<button
 			on:click={() => goto('/test')}
