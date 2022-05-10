@@ -9,6 +9,7 @@
 	import { user } from '$lib/store';
 	import Dashboard from '$lib/components/pages/dashboard/dashboard.svelte';
 	import Firstcome from '$lib/components/pages/dashboard/firstcome.svelte';
+	import { APP_NAME } from '$lib/env';
 
 	let firstCome = false;
 
@@ -28,7 +29,7 @@
 </script>
 
 <svelte:head>
-	<title>Dashboard | LIDI - PEDULI DISLEKSIA</title>
+	<title>Dashboard | {APP_NAME}</title>
 </svelte:head>
 
 <section class="w-full h-full">

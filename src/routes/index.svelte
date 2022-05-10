@@ -4,6 +4,7 @@
 
 <script>
 	import { fade } from 'svelte/transition';
+	import { APP_NAME } from '$lib/env';
 	import Form from '$lib/components/pages/index/form.svelte';
 
 	let formActive = false;
@@ -16,7 +17,7 @@
 </script>
 
 <svelte:head>
-	<title>LIDI - Peduli Disleksia</title>
+	<title>{APP_NAME}</title>
 </svelte:head>
 
 <section class="h-screen w-100 flex flex-col justify-center items-center" in:fade>
