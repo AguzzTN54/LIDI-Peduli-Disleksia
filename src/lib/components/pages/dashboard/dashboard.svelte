@@ -11,8 +11,8 @@
 	};
 
 	const mainMenu = [
-		{ pic: 'test', text: 'Tes <br/> Kemampuan' },
-		{ pic: 'train', text: 'Latihan' }
+		{ pic: 'test', text: 'Tes <br/> Kemampuan', href: 'test' },
+		{ pic: 'train', text: 'Latihan', href: 'training' }
 	];
 
 	const menu = [
@@ -49,11 +49,13 @@
 </header>
 <div
 	class="h-full w-full pt-2 pb-2 pl-5 pr-5 sm:pl-10 sm:pr-10 lg:pr-20 lg:pl-20 lg:pt-7 overflow-auto"
+	in:fade
 >
 	<div class="w-full flex flex-wrap">
-		{#each mainMenu as { pic, text }, i}
+		{#each mainMenu as { pic, text, href }, i}
 			<div class="w-full md:w-1/2 max-w-2xl flex p-2 md:p-3">
-				<div
+				<a
+					{href}
 					class="{i < 1 ? `bg-teal-600/[.5]` : `bg-amber-300/[.5]`}
 						p-5 rounded-lg w-full flex items-center transition-all hover:shadow-lg active:scale-95 relative overflow-hidden backdrop-blur-xs"
 				>
@@ -72,7 +74,7 @@
 					>
 						{@html text}
 					</caption>
-				</div>
+				</a>
 			</div>
 		{/each}
 		<div class="w-full mt-4" />

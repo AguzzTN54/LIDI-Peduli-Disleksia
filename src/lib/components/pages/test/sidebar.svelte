@@ -1,0 +1,56 @@
+<script>
+	import { browser } from '$app/env';
+	import { getContext, onMount } from 'svelte';
+	import OverlayScrollbar from 'overlayscrollbars';
+	import Navigation from './navigation.svelte';
+
+	export let expandable = false;
+	let scrollable;
+
+	let closeSidebar = browser ? getContext('closeSidebar') : null;
+
+	onMount(() => {
+		OverlayScrollbar(scrollable, { sizeAutoCapable: false, className: 'os-theme-light' });
+	});
+</script>
+
+<div
+	class="{!expandable
+		? `w-1/4`
+		: 'w-11/12'} min-w-[300px] h-full bg-white shadow-xl p-2 pl-5 pr-5 relative flex flex-col"
+	class:ml-auto={expandable}
+>
+	<div class="top border-b">
+		{#if !expandable}
+			<button class="mt-3 mb-2 hover:underline inline-block text-red-600">
+				<i class="ld-arrow-left text-lg inline-block align-middle" /> Batalkan Tes
+			</button>
+		{:else}
+			<div class="flex mb-2">
+				<button class="ml-auto p-2 pb-0 text-teal-800" on:click={closeSidebar}>
+					<i class="ld-close text-3xl leading-none" />
+				</button>
+			</div>
+		{/if}
+		<div class="w-full text-center font-semibold text-3xl mb-2 text-teal-600">1 / 50</div>
+	</div>
+
+	<div class="flex flex-wrap justify-between h-full" bind:this={scrollable}>
+		{#each Array(50) as x, i}
+			<button
+				class="w-2/12 p-1 border-2 m-1 aspect-square transition-all hover:border-teal-600"
+				class:bg-gray-200={i === 1}
+				class:bg-green-200={i === 2}
+				class:border-transparent={i === 2}
+			>
+				<span>{i + 1}</span>
+			</button>
+		{/each}
+	</div>
+
+	{#if !expandable}
+		<div class="flex mt-auto border-t">
+			<Navigation />
+		</div>
+	{/if}
+</div>
