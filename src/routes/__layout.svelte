@@ -32,7 +32,24 @@
 </main>
 
 <style global lang="postcss">
+	@import '../../node_modules/overlayscrollbars/css/OverlayScrollbars.css';
 	@import '../app.css';
+
+	.os-theme-light > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
+		background-color: #0f766e;
+		opacity: 0.2;
+		transition: all 0.2s;
+	}
+	.os-theme-light > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle:hover {
+		background-color: #0f766e;
+		opacity: 0.5;
+	}
+	.os-theme-light > .os-scrollbar-vertical {
+		width: 8px;
+	}
+	.os-theme-light > .os-scrollbar-horizontal {
+		height: 8px;
+	}
 
 	main {
 		background-image: url('/images/landing-background.jpg');
