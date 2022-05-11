@@ -5,7 +5,7 @@
 
 <script>
 	import { browser } from '$app/env';
-	import { setContext } from 'svelte';
+	import { getContext, setContext } from 'svelte';
 	import { fly, fade } from 'svelte/transition';
 	import { mobile } from '$lib/store';
 	import Sidebar from '$lib/components/pages/test/sidebar.svelte';
@@ -14,7 +14,9 @@
 	let sidebarOpen = false;
 
 	const closeSidebar = () => (sidebarOpen = false);
-	$: if (browser) setContext('closeSidebar', closeSidebar);
+	if (browser) setContext('closeSidebar', closeSidebar);
+
+	const togglePopup = browser ? getContext('togglePopup') : null;
 </script>
 
 <svelte:head>
@@ -38,7 +40,10 @@
 		{/if}
 		<div class="flex-col flex w-full">
 			<div class="flex w-full pl-5 pr-5 pt-2 items-center">
-				<button class="bg-transparent mt-3 mb-2 hover:underline inline-block text-red-600">
+				<button
+					class="bg-transparent mt-3 mb-2 hover:underline inline-block text-red-600"
+					on:click={togglePopup}
+				>
 					<i class="ld-arrow-left text-lg inline-block align-middle" /> Batalkan Tes
 				</button>
 				<button class="ml-auto text-3xl text-teal-700" on:click={() => (sidebarOpen = true)}>

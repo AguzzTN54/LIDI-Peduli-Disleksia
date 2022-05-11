@@ -8,6 +8,7 @@
 	let scrollable;
 
 	let closeSidebar = browser ? getContext('closeSidebar') : null;
+	let togglePopup = browser ? getContext('togglePopup') : null;
 
 	onMount(() => {
 		OverlayScrollbar(scrollable, { sizeAutoCapable: false, className: 'os-theme-light' });
@@ -22,7 +23,7 @@
 >
 	<div class="top border-b">
 		{#if !expandable}
-			<button class="mt-3 mb-2 hover:underline inline-block text-red-600">
+			<button class="mt-3 mb-2 hover:underline inline-block text-red-600" on:click={togglePopup}>
 				<i class="ld-arrow-left text-lg inline-block align-middle" /> Batalkan Tes
 			</button>
 		{:else}
