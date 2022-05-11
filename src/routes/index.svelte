@@ -3,9 +3,11 @@
 </script>
 
 <script>
+	import { goto } from '$app/navigation';
 	import { fade } from 'svelte/transition';
 	import { APP_NAME } from '$lib/env';
 	import Form from '$lib/components/pages/index/form.svelte';
+	import BtnMain from '$lib/components/utils/btn-main.svelte';
 
 	let formActive = false;
 	let formType;
@@ -41,9 +43,9 @@
 		</div>
 	{:else}
 		<div class="flex flex-col justify-center items-center w-5/6 sm:w-3/4 md:w-3/6 lg:w-2/6" in:fade>
-			<a href="/panduan" class="main-button">Panduan</a>
-			<button class="main-button" on:click={() => navigation('masuk')}>Masuk</button>
-			<button class="main-button" on:click={() => navigation('daftar')}>Buat Akun</button>
+			<BtnMain on:click={() => goto('/panduan')}>Panduan</BtnMain>
+			<BtnMain on:click={() => navigation('masuk')}>Masuk</BtnMain>
+			<BtnMain on:click={() => navigation('daftar')}>Buat Akun</BtnMain>
 			<button
 				class="bg-transparent mt-3 hover:underline inline-block text-teal-900"
 				on:click={() => navigation('anonim')}
@@ -53,11 +55,3 @@
 		</div>
 	{/if}
 </section>
-
-<style lang="postcss">
-	.main-button {
-		@apply bg-teal-700 text-white text-center p-3 mt-4 rounded-3xl uppercase transition-all;
-		@apply w-full;
-		@apply hover:bg-teal-800;
-	}
-</style>
