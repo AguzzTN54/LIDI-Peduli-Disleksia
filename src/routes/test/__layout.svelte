@@ -1,6 +1,6 @@
 <script>
 	import { onMount, setContext } from 'svelte';
-	import { mobile } from '$lib/store';
+	import { mobile } from '$lib/stores/test-store';
 	import Popup from '$lib/components/utils/popup.svelte';
 	import { browser } from '$app/env';
 	import { goto } from '$app/navigation';

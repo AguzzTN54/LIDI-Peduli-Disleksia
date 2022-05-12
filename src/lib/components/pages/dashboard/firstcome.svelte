@@ -1,6 +1,6 @@
 <script>
 	import { goto } from '$app/navigation';
-	import { user } from '$lib/store';
+	import { user } from '$lib/stores/global-store';
 	import { getContext } from 'svelte';
 	import { fade } from 'svelte/transition';
 

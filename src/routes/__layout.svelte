@@ -4,7 +4,7 @@
 	import { onMount } from 'svelte';
 	import { onAuthStateChanged } from 'firebase/auth';
 	import { authApp as auth } from '$lib/firebase/app';
-	import { user } from '$lib/store';
+	import { user } from '$lib/stores/global-store';
 	import firestore from '$lib/firebase/firestore';
 
 	const { routeId } = $page;

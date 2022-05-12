@@ -7,7 +7,7 @@
 	import { browser } from '$app/env';
 	import { getContext, setContext } from 'svelte';
 	import { fly, fade } from 'svelte/transition';
-	import { mobile } from '$lib/store';
+	import { mobile } from '$lib/stores/test-store';
 	import Sidebar from '$lib/components/pages/test/sidebar.svelte';
 	import Navigation from '$lib/components/pages/test/navigation.svelte';
 

@@ -1,5 +1,5 @@
 <script>
-	import { user } from '$lib/store';
+	import { user } from '$lib/stores/global-store';
 	import { fade } from 'svelte/transition';
 
 	let name;
