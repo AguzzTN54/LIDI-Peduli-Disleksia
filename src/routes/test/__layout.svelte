@@ -16,7 +16,7 @@
 		goto('/dashboard');
 	};
 
-	let show = true;
+	let show = false;
 	const handlePopup = () => (show = !show);
 
 	if (browser) setContext('togglePopup', handlePopup);
@@ -33,7 +33,7 @@
 			</div>
 			<p class="p-2">
 				Skor tidak akan dihitung apabila tes dibatalkan, pencapaian hingga saat ini tidak akan
-				disimpan dan akan mengulang mulai nomor 1 ketika mengulang tes kembali.
+				disimpan dan akan mengulang mulai nomor 1 ketika melakukan tes kembali.
 			</p>
 			<button
 				on:click={cancelTest}

@@ -16,6 +16,7 @@
 	];
 
 	const menu = [
+		{ pic: 'game', text: 'Permainan' },
 		{ pic: 'account', text: 'Profil' },
 		{ pic: 'history', text: 'Riwayat' },
 		{ pic: 'guide', text: 'Panduan' },

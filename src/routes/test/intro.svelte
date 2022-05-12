@@ -1,5 +1,6 @@
 <script>
 	import { goto } from '$app/navigation';
+	import { fade } from 'svelte/transition';
 	import { APP_NAME } from '$lib/env';
 	import BtnMain from '$lib/components/utils/btn-main.svelte';
 </script>
@@ -8,7 +9,7 @@
 	<title>Test Kemampuan | {APP_NAME}</title>
 </svelte:head>
 
-<section class="h-full w-full flex justify-center pl-2 pr-2 overflow-auto">
+<section class="h-full w-full flex justify-center pl-2 pr-2 overflow-auto" in:fade>
 	<div class="content p-5 w-full max-w-[600px] text-lg sm:text-xl">
 		<h1 class="text-3xl font-riangriung text-teal-800 text-center mb-5 sm:mb-10 pt-5">Ketentuan</h1>
 		<p class="mb-5">
@@ -27,5 +28,14 @@
 		</p>
 
 		<BtnMain on:click={() => goto('/test/001')}>Mulai Tes Sekarang</BtnMain>
+
+		<div class="block text-center">
+			<button
+				class="bg-transparent mt-3 hover:underline inline-block text-teal-900"
+				on:click={() => goto('/dashboard')}
+			>
+				<i class="ld-arrow-left text-lg inline-block align-middle" /> Batalkan Test
+			</button>
+		</div>
 	</div>
 </section>
