@@ -35,7 +35,7 @@
 
 <style lang="postcss">
 	button {
-		@apply p-2 pr-5 pl-5 mt-5 mb-3 rounded-full text-base text-ellipsis whitespace-nowrap overflow-hidden
+		@apply p-2 pr-5 pl-5 mt-3 sm:mt-5 sm:mb-3 rounded-full text-base text-ellipsis whitespace-nowrap overflow-hidden
         bg-teal-700 text-white hover:bg-teal-800 transition-all active:scale-95;
 	}
 </style>

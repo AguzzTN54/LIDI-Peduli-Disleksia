@@ -64,11 +64,11 @@
 			</div>
 			<div class="w-full text-center font-semibold text-xl mb-2 text-teal-600">1 / 50</div>
 
-			<div class="p-5 text-xl">
+			<div class="p-5 h-full text-xl overflow-auto">
 				<QuizItem />
 			</div>
 
-			<div class="flex mt-auto border-t bg-white pb-2">
+			<div class="flex w-full border-t bg-white pb-2">
 				<Navigation />
 			</div>
 		</div>

@@ -3,7 +3,6 @@
 
 	$: quiz = $quizzes[$activeIndex];
 
-	let selected;
 	const select = (l) => {
 		quizzes.update((arr) => {
 			return arr.map((d) => {
@@ -13,14 +12,15 @@
 				return d;
 			});
 		});
-		selected = l;
 	};
 </script>
 
 {#if !!quiz}
 	<div class="flex flex-col justify-evenly bg-white rounded-3xl w-full h-full">
-		<div class="flex flex-col items-center justify-center p-5 mt-5">
-			<div class="text-[15em] leading-none font-riangriung">{quiz.letter}</div>
+		<div class="flex flex-col items-center justify-center sm:p-5 pt-10 mt-5">
+			<div class="text-[10em] md:text-[15em] leading-[.8em] font-riangriung sm:mt-10">
+				{quiz.letter}
+			</div>
 			<p class="text-center">Pilih Huruf yang sama dengan gambar di atas</p>
 		</div>
 		<div class="flex flex-wrap justify-between p-10">

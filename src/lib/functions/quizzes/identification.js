@@ -1,8 +1,8 @@
 import { identification } from '$lib/bank-soal/identifikasi.json';
 import { getMultipleRandomItem, getRandomItem } from '../random';
 
-export const getIdentificationQuiz = () => {
-	const arr = getMultipleRandomItem(identification, 10);
+export const getIdentificationQuiz = (n) => {
+	const arr = getMultipleRandomItem(identification, n);
 	const result = arr.map((item) => {
 		const { letter, options, id } = item;
 		if (!options) return;
