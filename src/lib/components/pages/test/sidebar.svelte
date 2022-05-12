@@ -2,23 +2,31 @@
 	import { browser } from '$app/env';
 	import { getContext, onMount } from 'svelte';
 	import OverlayScrollbar from 'overlayscrollbars';
+	import { activeIndex, quizzes } from '$lib/stores/test-store';
 	import Navigation from './navigation.svelte';
 
 	export let expandable = false;
-	let scrollable;
 
 	let closeSidebar = browser ? getContext('closeSidebar') : null;
 	let togglePopup = browser ? getContext('togglePopup') : null;
 
+	let scrollable;
 	onMount(() => {
 		OverlayScrollbar(scrollable, { sizeAutoCapable: false, className: 'os-theme-light' });
 	});
+
+	$: quizNumber = $quizzes.map(({ answered }) => answered);
+
+	const changeQuestion = (i) => {
+		activeIndex.set(i);
+		if (expandable) closeSidebar();
+	};
 </script>
 
 <div
 	class="{!expandable
 		? `w-1/4`
-		: 'w-11/12'} min-w-[300px] h-full bg-white shadow-xl p-2 pl-5 pr-5 relative flex flex-col"
+		: 'w-11/12'} sm:min-w-[280px] lg:min-w-[340px] h-full bg-white shadow-xl p-2 pl-5 pr-5 relative flex flex-col"
 	class:ml-auto={expandable}
 >
 	<div class="top border-b">
@@ -37,12 +45,14 @@
 	</div>
 
 	<div class="flex flex-wrap justify-between h-full" bind:this={scrollable}>
-		{#each Array(50) as x, i}
+		{#each quizNumber as answered, i}
 			<button
 				class="w-2/12 p-1 border-2 m-1 aspect-square transition-all hover:border-teal-600"
-				class:bg-gray-200={i === 1}
-				class:bg-green-200={i === 2}
-				class:border-transparent={i === 2}
+				class:bg-gray-200={$activeIndex === i}
+				class:bg-green-200={answered}
+				class:border-transparent={answered}
+				class:border-teal-600={$activeIndex === i}
+				on:click={() => changeQuestion(i)}
 			>
 				<span>{i + 1}</span>
 			</button>

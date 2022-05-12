@@ -1,0 +1,134 @@
+{
+	"identification": [
+		{
+			"id": "01",
+			"letter": "a",
+			"options": ["AHVRBX", "adocbe"]
+		},
+		{
+			"id": "02",
+			"letter": "b",
+			"options": ["PBDGRE", "bcdqpg"]
+		},
+		{
+			"id": "03",
+			"letter": "c",
+			"options": ["CLKSEV", "ceaouv"]
+		},
+		{
+			"id": "04",
+			"letter": "d",
+			"options": ["DBRPFG", "dbcpqa"]
+		},
+		{
+			"id": "05",
+			"letter": "e",
+			"options": ["REGPCQ", "aecoru"]
+		},
+		{
+			"id": "06",
+			"letter": "f",
+			"options": ["FPTCJY", "erfypq"]
+		},
+		{
+			"id": "07",
+			"letter": "g",
+			"options": ["QGCPDB", "qgpjbd"]
+		},
+		{
+			"id": "08",
+			"letter": "h",
+			"options": ["HBKRAN", "khbdty"]
+		},
+		{
+			"id": "09",
+			"letter": "i",
+			"options": ["IJLTYV", "litfjh"]
+		},
+		{
+			"id": "10",
+			"letter": "j",
+			"options": ["JLFITY", "jlyitq"]
+		},
+		{
+			"id": "11",
+			"letter": "k",
+			"options": ["RKLXPB", "xftrhk"]
+		},
+		{
+			"id": "12",
+			"letter": "l",
+			"options": ["ILJFTY", "litjyf"]
+		},
+		{
+			"id": "13",
+			"letter": "m",
+			"options": ["MNXWHK", "mnvahw"]
+		},
+		{
+			"id": "14",
+			"letter": "n",
+			"options": ["NMHAUW", "mnwvhx"]
+		},
+		{
+			"id": "15",
+			"letter": "o",
+			"options": ["QOGDCU", "opquvg"]
+		},
+		{
+			"id": "16",
+			"letter": "p",
+			"options": ["PDFRBQ", "pqygbd"]
+		},
+		{
+			"id": "17",
+			"letter": "q",
+			"options": ["QOPGCD", "pqyjbd"]
+		},
+		{
+			"id": "18",
+			"letter": "r",
+			"options": ["QTRFXP", "srcezy"]
+		},
+		{
+			"id": "19",
+			"letter": "s",
+			"options": ["SZCRXL", "szreap"]
+		},
+		{
+			"id": "20",
+			"letter": "t",
+			"options": ["TYFIJL", "trkpyj"]
+		},
+		{
+			"id": "21",
+			"letter": "u",
+			"options": ["OUWXVY", "owvnmu"]
+		},
+		{
+			"id": "22",
+			"letter": "v",
+			"options": ["VWUNHY", "uwvmnx"]
+		},
+		{
+			"id": "23",
+			"letter": "w",
+			"options": ["WXVUNH", "uwvmnx"]
+		},
+		{
+			"id": "24",
+			"letter": "x",
+			"options": ["XVWYHK", "xuhnwg"]
+		},
+		{
+			"id": "25",
+			"letter": "y",
+			"options": ["TYKJVX", "jytgqp"]
+		},
+		{
+			"id": "26",
+			"letter": "z",
+			"options": ["ZSHKXY", "zsecax"]
+		}
+	]
+}

@@ -5,18 +5,26 @@
 
 <script>
 	import { browser } from '$app/env';
+	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
 	import { getContext, setContext } from 'svelte';
 	import { fly, fade } from 'svelte/transition';
-	import { mobile } from '$lib/stores/test-store';
+	import { activeIndex, mobile, quizzes } from '$lib/stores/test-store';
 	import Sidebar from '$lib/components/pages/test/sidebar.svelte';
 	import Navigation from '$lib/components/pages/test/navigation.svelte';
+	import QuizItem from '$lib/components/pages/test/quiz-item.svelte';
 
 	let sidebarOpen = false;
 
 	const closeSidebar = () => (sidebarOpen = false);
 	if (browser) setContext('closeSidebar', closeSidebar);
-
 	const togglePopup = browser ? getContext('togglePopup') : null;
+
+	const { params } = $page;
+	const index = $quizzes.findIndex(({ id }) => id === params.id);
+	activeIndex.set(index);
+	const quizItem = $quizzes[index];
+	if (browser && (!params.id || !quizItem)) goto('/test');
 </script>
 
 <svelte:head>
@@ -26,6 +34,9 @@
 <section class="h-full w-full flex">
 	{#if !$mobile}
 		<Sidebar />
+		<div class="p-10 text-lg w-full">
+			<QuizItem />
+		</div>
 	{:else}
 		{#if sidebarOpen}
 			<div class="fixed top-0 right-0 h-full w-full">
@@ -38,6 +49,7 @@
 				</div>
 			</div>
 		{/if}
+
 		<div class="flex-col flex w-full">
 			<div class="flex w-full pl-5 pr-5 pt-2 items-center">
 				<button
@@ -51,6 +63,10 @@
 				</button>
 			</div>
 			<div class="w-full text-center font-semibold text-xl mb-2 text-teal-600">1 / 50</div>
+
+			<div class="p-5 text-xl">
+				<QuizItem />
+			</div>
 
 			<div class="flex mt-auto border-t bg-white pb-2">
 				<Navigation />

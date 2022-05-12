@@ -3,6 +3,14 @@
 	import { fade } from 'svelte/transition';
 	import { APP_NAME } from '$lib/env';
 	import BtnMain from '$lib/components/utils/btn-main.svelte';
+	import { getQuizzes } from '$lib/functions/quizzes';
+	import { quizzes } from '$lib/stores/test-store';
+
+	const startQuiz = () => {
+		const quiz = getQuizzes();
+		quizzes.set(quiz);
+		goto(`/test/${quiz[0].id}`);
+	};
 </script>
 
 <svelte:head>
@@ -27,7 +35,7 @@
 			Pendaming dapat membantu melakukan navigasi untuk mempermudah proses tes.
 		</p>
 
-		<BtnMain on:click={() => goto('/test/001')}>Mulai Tes Sekarang</BtnMain>
+		<BtnMain on:click={startQuiz}>Mulai Tes Sekarang</BtnMain>
 
 		<div class="block text-center">
 			<button

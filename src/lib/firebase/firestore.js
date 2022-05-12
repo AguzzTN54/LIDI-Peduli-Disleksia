@@ -72,10 +72,4 @@ const firestore = {
 	}
 };
 
-const isUserAlreadyFillData = async (uid) => {
-	const { data } = await firestore.getByUid(uid);
-	return data !== null;
-};
-
 export default firestore;
-export { isUserAlreadyFillData };
