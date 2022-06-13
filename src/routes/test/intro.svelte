@@ -9,7 +9,7 @@
 	const startQuiz = () => {
 		const quiz = getQuizzes();
 		quizzes.set(quiz);
-		goto(`/test/${quiz[0].id}`);
+		goto(`/test/${quiz[0].id}`, { replaceState: true });
 	};
 </script>
 

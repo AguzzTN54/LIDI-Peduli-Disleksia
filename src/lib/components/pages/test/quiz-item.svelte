@@ -40,8 +40,8 @@
 	</div>
 {/if}
 
-<style>
+<style lang="postcss">
 	.active {
-		@apply bg-teal-600 text-white border-0;
+		@apply bg-teal-600 hover:bg-teal-600 text-white border-0;
 	}
 </style>

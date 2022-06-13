@@ -24,7 +24,9 @@
 	const index = $quizzes.findIndex(({ id }) => id === params.id);
 	activeIndex.set(index);
 	const quizItem = $quizzes[index];
-	if (browser && (!params.id || !quizItem)) goto('/test');
+	if (browser && (!params.id || !quizItem)) goto('/test', { replaceState: true });
+
+	$: answeredQty = $quizzes.filter(({ answered }) => answered).length;
 </script>
 
 <svelte:head>
@@ -62,7 +64,9 @@
 					<i class="ld-nav" />
 				</button>
 			</div>
-			<div class="w-full text-center font-semibold text-xl mb-2 text-teal-600">1 / 50</div>
+			<div class="w-full text-center font-semibold text-xl mb-2 text-teal-600">
+				{answeredQty} / {$quizzes.length}
+			</div>
 
 			<div class="p-5 h-full text-xl overflow-auto">
 				<QuizItem />

@@ -16,6 +16,7 @@
 	});
 
 	$: quizNumber = $quizzes.map(({ answered }) => answered);
+	$: answeredQty = $quizzes.filter(({ answered }) => answered).length;
 
 	const changeQuestion = (i) => {
 		activeIndex.set(i);
@@ -41,7 +42,9 @@
 				</button>
 			</div>
 		{/if}
-		<div class="w-full text-center font-semibold text-3xl mb-2 text-teal-600">1 / 50</div>
+		<div class="w-full text-center font-semibold text-3xl mb-2 text-teal-600">
+			{answeredQty} / {$quizzes.length}
+		</div>
 	</div>
 
 	<div class="flex flex-wrap justify-between h-full" bind:this={scrollable}>

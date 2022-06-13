@@ -13,7 +13,7 @@
 	};
 
 	const cancelTest = () => {
-		goto('/dashboard');
+		goto('/dashboard', { replaceState: true });
 	};
 
 	let show = false;
