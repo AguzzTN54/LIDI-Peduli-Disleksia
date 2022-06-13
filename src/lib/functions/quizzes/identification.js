@@ -11,6 +11,7 @@ export const getIdentificationQuiz = (n, audio = false) => {
 
 		modified.category = audio ? 'identifikasi-huruf-audio' : 'identifikasi-huruf';
 		modified.letter = i > 0 ? letter.toUpperCase() : letter;
+		modified.answerKey = modified.letter.toLowerCase();
 		modified.options = i > 0 ? options[1] : options[0];
 		return modified;
 	});

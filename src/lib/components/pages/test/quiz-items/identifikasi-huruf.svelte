@@ -3,7 +3,7 @@
 
 	export let letter;
 	export let options;
-	export let answer;
+	export let userAnswer;
 	export let questionNumber;
 	export let audio = false;
 
@@ -44,7 +44,7 @@
 				<button
 					class="border-2 aspect-square inline-block w-20 max-w-[100%] text-2xl font-semibold
         rounded-lg transition-all hover:bg-gray-100"
-					class:active={answer === l}
+					class:active={userAnswer === l}
 					on:click={() => select(l)}
 				>
 					{l}

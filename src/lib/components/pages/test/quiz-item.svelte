@@ -8,12 +8,9 @@
 
 	const select = (l) => {
 		quizzes.update((arr) => {
-			return arr.map((d) => {
-				if (d.letter !== quiz.letter) return d;
-				d.answered = true;
-				d.answer = l;
-				return d;
-			});
+			arr[$activeIndex].answered = true;
+			arr[$activeIndex].userAnswer = l;
+			return arr;
 		});
 	};
 

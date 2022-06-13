@@ -27,7 +27,7 @@ export const speak = (text) => {
 			console.error('Audio Error');
 		});
 
-		utterThis.voice = text.toLowerCase() === 'l' ? voiceEN : voiceID;
+		utterThis.voice = ['l', 'f'].includes(text.toLowerCase()) ? voiceEN : voiceID;
 		utterThis.pitch = 1;
 		utterThis.rate = 0.6;
 		synth.speak(utterThis);

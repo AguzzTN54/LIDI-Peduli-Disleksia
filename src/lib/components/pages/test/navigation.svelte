@@ -1,4 +1,6 @@
 <script>
+	import { calculateTestScore } from '$lib/functions/quizzes/test-score';
+
 	import { activeIndex, quizzes } from '$lib/stores/test-store';
 
 	$: readyToSubmit = !$quizzes.map(({ answered }) => !!answered).includes(false);
@@ -18,7 +20,9 @@
 
 {#if readyToSubmit}
 	<div class="w-full p-2 pt-0 text-center">
-		<button class="pl-5 pr-5 block w-full">Kirim</button>
+		<button class="pl-5 pr-5 block w-full" on:click={() => calculateTestScore($quizzes)}>
+			Kirim
+		</button>
 	</div>
 {:else}
 	<div class="w-1/2 p-2 pt-0 text-center">
