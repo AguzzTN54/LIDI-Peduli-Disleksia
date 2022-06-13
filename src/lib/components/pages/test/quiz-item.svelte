@@ -18,9 +18,9 @@
 </script>
 
 {#if !!quiz}
-	{#if quiz.category === 'identifikasi-huruf'}
+	{#if quiz.category === 'mengidentifikasi-huruf'}
 		<IdentifikasiHuruf {...quiz} {questionNumber} />
-	{:else if quiz.category === 'identifikasi-huruf-audio'}
+	{:else if quiz.category === 'mengidentifikasi-huruf-dari-audio'}
 		<IdentifikasiHuruf {...quiz} {questionNumber} audio />
 	{/if}
 {/if}

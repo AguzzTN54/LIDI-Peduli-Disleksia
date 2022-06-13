@@ -9,7 +9,7 @@ export const getIdentificationQuiz = (n, audio = false) => {
 		const modified = { id };
 		const i = getRandomItem([0, 1]);
 
-		modified.category = audio ? 'identifikasi-huruf-audio' : 'identifikasi-huruf';
+		modified.category = audio ? 'mengidentifikasi-huruf-dari-audio' : 'mengidentifikasi-huruf';
 		modified.letter = i > 0 ? letter.toUpperCase() : letter;
 		modified.answerKey = modified.letter.toLowerCase();
 		modified.options = i > 0 ? options[1] : options[0];

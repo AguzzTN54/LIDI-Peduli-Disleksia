@@ -1,6 +1,4 @@
-import { testScore } from '$lib/stores/test-store';
-
-export const calculateTestScore = (quizzes) => {
+export const checkAnswer = (quizzes) => {
 	const skor = {};
 	quizzes.forEach(({ category, userAnswer, answerKey }) => {
 		const isAnswerTrue = answerKey === userAnswer.toLowerCase();
@@ -11,6 +9,5 @@ export const calculateTestScore = (quizzes) => {
 		skor[category].trueAnswer = isAnswerTrue ? trueAnswer + 1 : trueAnswer;
 		skor[category].total = total + 1;
 	});
-	testScore.set(skor);
 	return skor;
 };
