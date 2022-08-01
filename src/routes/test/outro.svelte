@@ -1,13 +1,14 @@
 <script>
-	import { fade } from 'svelte/transition';
-	import { APP_NAME } from '$lib/env';
-	import BtnMain from '$lib/components/utils/btn-main.svelte';
 	import { goto } from '$app/navigation';
-	import { checkAnswer } from '$lib/functions/quizzes/checkAnswer';
-	import { quizzes } from '$lib/stores/test-store';
-	import { dashToSpace } from '$lib/functions/dashToSpace';
 	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
 	import OverlayScrollbars from 'overlayscrollbars';
+	import { APP_NAME } from '$lib/env';
+
+	import { quizzes } from '$lib/stores/test-store';
+	import { checkAnswer } from '$lib/helpers/quizzes/checkAnswer';
+	import { dashToSpace } from '$lib/helpers/dashToSpace';
+	import BtnMain from '$lib/components/utils/btn-main.svelte';
 
 	const score = [];
 	const evaluated = checkAnswer($quizzes);

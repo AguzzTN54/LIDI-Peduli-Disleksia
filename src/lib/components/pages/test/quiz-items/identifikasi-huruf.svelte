@@ -11,7 +11,7 @@
 	let playAudio;
 
 	onMount(async () => {
-		const { speak } = await import('$lib/functions/speechSynth');
+		const { speak } = await import('$lib/helpers/speechSynth');
 		playAudio = speak;
 	});
 </script>

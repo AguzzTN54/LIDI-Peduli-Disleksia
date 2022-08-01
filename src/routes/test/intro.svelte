@@ -2,9 +2,9 @@
 	import { goto } from '$app/navigation';
 	import { fade } from 'svelte/transition';
 	import { APP_NAME } from '$lib/env';
-	import BtnMain from '$lib/components/utils/btn-main.svelte';
-	import { getQuizzes } from '$lib/functions/quizzes';
 	import { quizzes } from '$lib/stores/test-store';
+	import { getQuizzes } from '$lib/helpers/quizzes';
+	import BtnMain from '$lib/components/utils/btn-main.svelte';
 
 	const startQuiz = () => {
 		const quiz = getQuizzes();

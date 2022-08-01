@@ -5,7 +5,7 @@
 		signinWithGoogle,
 		signupWithEmail
 	} from '$lib/firebase/auth';
-	import { dashToSpace } from '$lib/functions/dashToSpace';
+	import { dashToSpace } from '$lib/helpers/dashToSpace';
 	import BtnLoader from '$lib/components/utils/btn-loader.svelte';
 	import LoaderEllipsis from '$lib/components/utils/loader-ellipsis.svelte';
 	import firestore from '$lib/firebase/firestore';
