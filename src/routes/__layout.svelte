@@ -4,8 +4,11 @@
 	import { onMount } from 'svelte';
 	import { onAuthStateChanged } from 'firebase/auth';
 	import { authApp as auth } from '$lib/firebase/app';
-	import { user } from '$lib/stores/global-store';
+	import { mobile, user } from '$lib/stores/global-store';
 	import firestore from '$lib/firebase/firestore';
+
+	let innerWidth = 0;
+	$: mobile.set(innerWidth < 650);
 
 	const { routeId } = $page;
 
@@ -26,6 +29,8 @@
 		});
 	});
 </script>
+
+<svelte:window bind:innerWidth />
 
 <main class="h-screen w-screen overflow-hidden bg-cover bg-center bg-emerald-500">
 	<slot />

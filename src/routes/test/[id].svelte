@@ -9,7 +9,9 @@
 	import { page } from '$app/stores';
 	import { getContext, setContext } from 'svelte';
 	import { fly, fade } from 'svelte/transition';
-	import { activeIndex, mobile, quizzes } from '$lib/stores/test-store';
+
+	import { mobile } from '$lib/stores/global-store';
+	import { activeIndex, quizzes } from '$lib/stores/test-store';
 	import Sidebar from '$lib/components/pages/test/sidebar.svelte';
 	import Navigation from '$lib/components/pages/test/navigation.svelte';
 	import QuizItem from '$lib/components/pages/test/quiz-item.svelte';

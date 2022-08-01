@@ -110,7 +110,7 @@
 			{saranTxt(average)}
 		</p>
 
-		<div class="md:p-10">
+		<div class="md:p-10 overflow-scroll">
 			<table class="w-full text-sm text-gray-500 text-center">
 				<thead class="text-xs text-gray-700 uppercase bg-gray-50/[.7]">
 					<tr>

@@ -1,16 +1,8 @@
 <script>
-	import { onMount, setContext } from 'svelte';
-	import { mobile } from '$lib/stores/test-store';
+	import { setContext } from 'svelte';
 	import Popup from '$lib/components/utils/popup.svelte';
 	import { browser } from '$app/env';
 	import { goto } from '$app/navigation';
-
-	const checkViewport = () => {
-		mobile.set(window.innerWidth < 650);
-		window.addEventListener('resize', () => {
-			mobile.set(window.innerWidth < 650);
-		});
-	};
 
 	let show = false;
 	const handlePopup = () => (show = !show);
@@ -29,7 +21,6 @@
 		setContext('togglePopup', handlePopup);
 		setContext('toggleSendAswerPopup', handleSendAnswerPopup);
 	}
-	onMount(checkViewport);
 </script>
 
 <div class="bg-[#ddf4e9] h-full w-full">
