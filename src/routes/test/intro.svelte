@@ -32,7 +32,7 @@
 		</ol>
 		<p class="mb-7 sm:mb-12">
 			Semua soal memiliki bobot yang sama, tidak ada batasan waktu namun harus dijawab seluruhnya.
-			Pendaming dapat membantu melakukan navigasi untuk mempermudah proses tes.
+			Pendamping dapat membantu melakukan navigasi untuk mempermudah proses tes.
 		</p>
 
 		<BtnMain on:click={startQuiz}>Mulai Tes Sekarang</BtnMain>

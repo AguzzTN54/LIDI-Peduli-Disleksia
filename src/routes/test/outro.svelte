@@ -7,6 +7,7 @@
 	import { quizzes } from '$lib/stores/test-store';
 	import { dashToSpace } from '$lib/functions/dashToSpace';
 	import { onMount } from 'svelte';
+	import OverlayScrollbars from 'overlayscrollbars';
 
 	const score = [];
 	const evaluated = checkAnswer($quizzes);
@@ -21,6 +22,7 @@
 		};
 		score.push(skor);
 	});
+	console.log(score);
 
 	const getAverage = (prev, key, i, arr) => {
 		const { total, trueAnswer } = evaluated[key];
@@ -33,32 +35,79 @@
 	};
 	const average = Object.keys(evaluated).reduce(getAverage, { total: 0, trueAnswer: 0 });
 
-	onMount(() => {
-		if ($quizzes.length < 1) return goto('/dashboard', { replaceState: true });
-	});
+	const calculateColor = (percentage) => {
+		const hue = percentage * 120;
+		return `color: hsl(${hue}, 100%, 45%);`;
+	};
+
+	const congratulateTxt = (avg) => {
+		if (avg === 100) return 'Perfect';
+		if (avg > 90) return 'Fantastic';
+		if (avg > 80) return 'Sangat Bagus';
+		if (avg > 70) return 'Bagus';
+		if (avg > 60) return 'Rata-Rata';
+		if (avg > 50) return 'Cukup';
+		if (avg > 30) return 'Kurang';
+		if (avg > 10) return 'Sangat Kurang';
+		return 'Butuh Perhatian Khusus';
+	};
+
+	const saranTxt = (avg) => {
+		if (avg === 100) {
+			return 'Skor sempurna, Sebagai orangtua, anda tidak perlu khawatir terhadap kemampuan literasi anak anda';
+		}
+		if (avg > 90) return 'Hebat, Pertahankan kemampuan yang sudah dimiliki';
+		if (avg > 80) {
+			return 'Kemampuan literasi sudah sangat bagus, namun masih dapat ditingkatkan agar lebih baik';
+		}
+		if (avg > 70) {
+			return 'Kemampuan di atas rata-rata, namun tetap memerlukan latihan agar kemampuan terus meningkat';
+		}
+		if (avg > 60) {
+			return 'Latihan rutin adalah hal yang bisa dilakukan untuk meningkatkan kemampuan literasi';
+		}
+		if (avg > 50) {
+			return 'Kemampuan cukup untuk memahami literasi di lingkungan sehari hari, namun disarankan untk tetap melakukan latihan untuk meningkatkan kemampuan';
+		}
+		if (avg > 30) return 'Diperlukan latihan untuk meningkatkan kemampuan literasi';
+		if (avg > 10) {
+			return 'Kemampuan literasi masih sangat kurang, disarankan untuk mengatur jadwal belajar dan latihan secara rutin';
+		}
+		return 'Kemampuan jauh di bawah rata-rata, perlu pendampingan khusus dalam proses belajar.';
+	};
 
 	const backToDashboard = () => {
 		goto('/dashboard', { replaceState: true });
 		quizzes.set([]);
 	};
+
+	let content;
+	onMount(() => {
+		if ($quizzes.length < 1) return goto('/dashboard', { replaceState: true });
+		OverlayScrollbars(content, { sizeAutoCapable: false, className: 'os-theme-light' });
+	});
 </script>
 
 <svelte:head>
 	<title>Skor | {APP_NAME}</title>
 </svelte:head>
 
-<section class="h-full w-full flex justify-center pl-2 pr-2 overflow-auto" in:fade>
+<section class="h-full w-full flex justify-center pl-2 pr-2" bind:this={content} in:fade>
 	<div class="content p-5 w-full text-lg sm:text-xl">
 		<h1 class="text-[2em] leading-10 font-riangriung text-teal-800 text-center mb-10 sm:mb-16 pt-5">
 			SKOR
 		</h1>
 		<div class="text-center mb-16">
-			<h2 class="text-green-600 text-[3em] leading-10 font-extrabold mb-6 sm:mb-10">{average}%</h2>
-			<span class="uppercase font-semibold text-2xl"> Perfect </span>
+			<h2
+				class="text-[3em] leading-10 font-extrabold mb-6 sm:mb-10"
+				style={calculateColor(average / 100)}
+			>
+				{average}%
+			</h2>
+			<span class="uppercase font-semibold text-2xl"> {congratulateTxt(average)} </span>
 		</div>
 		<p class="mb-7 sm:mb-12 max-w-[600px] ml-auto mr-auto text-center">
-			Skor sempurna, Sebagai orangtua, anda tidak perlu khawatir terhadap kemampuan membaca anak
-			anda.
+			{saranTxt(average)}
 		</p>
 
 		<div class="md:p-10">
