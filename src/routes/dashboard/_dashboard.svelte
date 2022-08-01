@@ -1,6 +1,6 @@
 <script>
-	import Header from '$lib/components/utils/header.svelte';
 	import { fade } from 'svelte/transition';
+	import Header from '$lib/components/header.svelte';
 
 	const mainMenu = [
 		{ pic: 'test', text: 'Tes <br/> Kemampuan', href: 'test' },

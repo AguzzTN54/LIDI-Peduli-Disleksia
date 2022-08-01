@@ -6,8 +6,8 @@
 		signupWithEmail
 	} from '$lib/firebase/auth';
 	import { dashToSpace } from '$lib/helpers/dashToSpace';
-	import BtnLoader from '$lib/components/utils/btn-loader.svelte';
-	import LoaderEllipsis from '$lib/components/utils/loader-ellipsis.svelte';
+	import BtnLoader from '$lib/components/btn-loader.svelte';
+	import LoaderEllipsis from '$lib/components/loader-ellipsis.svelte';
 	import firestore from '$lib/firebase/firestore';
 
 	export let formType;

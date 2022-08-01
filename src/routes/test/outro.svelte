@@ -8,7 +8,7 @@
 	import { quizzes } from '$lib/stores/test-store';
 	import { checkAnswer } from '$lib/helpers/quizzes/checkAnswer';
 	import { dashToSpace } from '$lib/helpers/dashToSpace';
-	import BtnMain from '$lib/components/utils/btn-main.svelte';
+	import BtnMain from '$lib/components/btn-main.svelte';
 
 	const score = [];
 	const evaluated = checkAnswer($quizzes);
@@ -111,7 +111,7 @@
 			{saranTxt(average)}
 		</p>
 
-		<div class="md:p-10 overflow-scroll">
+		<div class="md:p-10 overflow-auto">
 			<table class="w-full text-sm text-gray-500 text-center">
 				<thead class="text-xs text-gray-700 uppercase bg-gray-50/[.7]">
 					<tr>

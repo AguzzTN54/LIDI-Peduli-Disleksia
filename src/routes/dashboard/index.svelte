@@ -5,11 +5,11 @@
 <script>
 	import { browser } from '$app/env';
 	import { setContext } from 'svelte';
+	import { APP_NAME } from '$lib/env';
 	import firestore from '$lib/firebase/firestore';
 	import { user } from '$lib/stores/global-store';
-	import Dashboard from '$lib/components/pages/dashboard/dashboard.svelte';
-	import Firstcome from '$lib/components/pages/dashboard/firstcome.svelte';
-	import { APP_NAME } from '$lib/env';
+	import Dashboard from './_dashboard.svelte';
+	import Firstcome from './_firstcome.svelte';
 
 	let firstCome = false;
 

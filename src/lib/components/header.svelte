@@ -1,6 +1,5 @@
 <script>
 	import { user, mobile } from '$lib/stores/global-store';
-	import { fade } from 'svelte/transition';
 
 	export let dashboard = false;
 	let name;
@@ -12,10 +11,7 @@
 	};
 </script>
 
-<header
-	class="flex pl-5 pr-5 pt-2 pb-2 lg:pt-8 lg:pr-10 lg:pl-10 justify-between sm:items-center"
-	in:fade
->
+<header class="flex pl-5 pr-5 pt-2 pb-2 lg:pt-8 lg:pr-10 lg:pl-10 justify-between sm:items-center">
 	<div class="flex flex-row" class:flex-col={dashboard && $mobile}>
 		<picture class="w-1/2">
 			<img

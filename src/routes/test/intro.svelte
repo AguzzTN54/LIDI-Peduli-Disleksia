@@ -4,7 +4,7 @@
 	import { APP_NAME } from '$lib/env';
 	import { quizzes } from '$lib/stores/test-store';
 	import { getQuizzes } from '$lib/helpers/quizzes';
-	import BtnMain from '$lib/components/utils/btn-main.svelte';
+	import BtnMain from '$lib/components/btn-main.svelte';
 
 	const startQuiz = () => {
 		const quiz = getQuizzes();

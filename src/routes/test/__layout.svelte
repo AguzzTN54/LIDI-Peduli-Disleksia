@@ -1,6 +1,6 @@
 <script>
 	import { setContext } from 'svelte';
-	import Popup from '$lib/components/utils/popup.svelte';
+	import Popup from '$lib/components/popup.svelte';
 	import { browser } from '$app/env';
 	import { goto } from '$app/navigation';
 

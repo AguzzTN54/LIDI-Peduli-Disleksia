@@ -12,9 +12,9 @@
 
 	import { mobile } from '$lib/stores/global-store';
 	import { activeIndex, quizzes } from '$lib/stores/test-store';
-	import Sidebar from '$lib/components/pages/test/sidebar.svelte';
-	import Navigation from '$lib/components/pages/test/navigation.svelte';
-	import QuizItem from '$lib/components/pages/test/quiz-item.svelte';
+	import Sidebar from './_components/sidebar.svelte';
+	import Navigation from './_components/navigation.svelte';
+	import QuizItem from './_components/quiz-item.svelte';
 
 	let sidebarOpen = false;
 

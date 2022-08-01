@@ -6,8 +6,8 @@
 	import { goto } from '$app/navigation';
 	import { fade } from 'svelte/transition';
 	import { APP_NAME } from '$lib/env';
-	import Form from '$lib/components/pages/index/form.svelte';
 	import BtnMain from '$lib/components/utils/btn-main.svelte';
+	import Form from './_index/form.svelte';
 
 	let formActive = false;
 	let formType;
