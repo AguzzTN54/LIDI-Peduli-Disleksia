@@ -4,7 +4,8 @@
 	import { APP_NAME } from '$lib/env';
 	import { quizzes } from '$lib/stores/test-store';
 	import { getQuizzes } from '$lib/helpers/quizzes';
-	import BtnMain from '$lib/components/btn-main.svelte';
+	import BtnMain from '$lib/components/button/btn-main.svelte';
+	import ButtonBack from '$lib/components/button/button-back.svelte';
 
 	const startQuiz = () => {
 		const quiz = getQuizzes();
@@ -38,12 +39,7 @@
 		<BtnMain on:click={startQuiz}>Mulai Tes Sekarang</BtnMain>
 
 		<div class="block text-center">
-			<button
-				class="bg-transparent mt-3 hover:underline inline-block text-teal-900"
-				on:click={() => goto('/dashboard')}
-			>
-				<i class="ld-arrow-left text-lg inline-block align-middle" /> Batalkan Test
-			</button>
+			<ButtonBack cancel />
 		</div>
 	</div>
 </section>

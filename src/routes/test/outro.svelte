@@ -8,7 +8,7 @@
 	import { quizzes } from '$lib/stores/test-store';
 	import { checkAnswer } from '$lib/helpers/quizzes/checkAnswer';
 	import { dashToSpace } from '$lib/helpers/dashToSpace';
-	import BtnMain from '$lib/components/btn-main.svelte';
+	import BtnMain from '$lib/components/button/btn-main.svelte';
 
 	const score = [];
 	const evaluated = checkAnswer($quizzes);

@@ -3,6 +3,7 @@
 	import { getContext, onMount } from 'svelte';
 	import OverlayScrollbar from 'overlayscrollbars';
 	import { activeIndex, quizzes } from '$lib/stores/test-store';
+	import ButtonBack from '$lib/components/button/button-back.svelte';
 	import Navigation from './navigation.svelte';
 
 	export let expandable = false;
@@ -32,9 +33,7 @@
 >
 	<div class="top border-b">
 		{#if !expandable}
-			<button class="mt-3 mb-2 hover:underline inline-block text-red-600" on:click={togglePopup}>
-				<i class="ld-arrow-left text-lg inline-block align-middle" /> Batalkan Tes
-			</button>
+			<ButtonBack cancel preventDefault on:click={togglePopup} />
 		{:else}
 			<div class="flex mb-2">
 				<button class="ml-auto p-2 pb-0 text-teal-800" on:click={closeSidebar}>

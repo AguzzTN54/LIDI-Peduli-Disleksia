@@ -12,6 +12,8 @@
 
 	import { mobile } from '$lib/stores/global-store';
 	import { activeIndex, quizzes } from '$lib/stores/test-store';
+
+	import ButtonBack from '$lib/components/button/button-back.svelte';
 	import Sidebar from './_components/sidebar.svelte';
 	import Navigation from './_components/navigation.svelte';
 	import QuizItem from './_components/quiz-item.svelte';
@@ -56,12 +58,7 @@
 
 		<div class="flex-col flex w-full">
 			<div class="flex w-full pl-5 pr-5 pt-2 items-center">
-				<button
-					class="bg-transparent mt-3 mb-2 hover:underline inline-block text-red-600"
-					on:click={togglePopup}
-				>
-					<i class="ld-arrow-left text-lg inline-block align-middle" /> Batalkan Tes
-				</button>
+				<ButtonBack cancel preventDefault on:click={togglePopup} />
 				<button class="ml-auto text-3xl text-teal-700" on:click={() => (sidebarOpen = true)}>
 					<i class="ld-nav" />
 				</button>
