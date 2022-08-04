@@ -1,5 +1,6 @@
 <script>
-	import { getContext, onMount } from 'svelte';
+	import { getContext } from 'svelte';
+	import { speak } from '$lib/helpers/speechSynth';
 
 	export let letter;
 	export let options;
@@ -8,12 +9,13 @@
 	export let audio = false;
 
 	const select = getContext('selectAnswer');
-	let playAudio;
+	let isPlayed = false;
 
-	onMount(async () => {
-		const { speak } = await import('$lib/helpers/speechSynth');
-		playAudio = speak;
-	});
+	const playAudio = async (txt) => {
+		isPlayed = true;
+		await speak(txt);
+		isPlayed = false;
+	};
 </script>
 
 <div class="flex flex-col justify-evenly bg-white rounded-3xl w-full h-full">
@@ -24,9 +26,9 @@
 			</p>
 			<button
 				class="border-2 pl-12 pr-12 pt-10 pb-10 rounded-xl bg-teal-700 text-white active:scale-95 transition-all"
-				on:click={playAudio(letter)}
+				on:click={() => playAudio(letter)}
 			>
-				<i class="ld-volume block text-[5em]" />
+				<i class="ld-{isPlayed ? 'pause' : 'volume'} block text-[5em]" />
 				<span class="block">Play</span>
 			</button>
 		{:else}
