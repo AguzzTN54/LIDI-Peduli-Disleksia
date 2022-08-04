@@ -1,4 +1,4 @@
-import { identification } from '$lib/bank-soal/identifikasi.json';
+import { identification } from '$lib/data/bank-soal/identifikasi.json';
 import { getMultipleRandomItem, getRandomItem } from '../random';
 
 export const getIdentificationQuiz = (n, audio = false) => {

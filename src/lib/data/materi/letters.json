@@ -1,0 +1,30 @@
+{
+	"letters": [
+		{ "letter": "A", "words": ["ayam", "akar", "awan"] },
+		{ "letter": "B", "words": ["Babi", "Bumi", "Bebek"] },
+		{ "letter": "C", "words": ["Cicak", "Cuci", "Capung"] },
+		{ "letter": "D", "words": ["Diam", "Duri", "Delman"] },
+		{ "letter": "E", "words": ["Ekor", "Emas", "Elang"] },
+		{ "letter": "F", "words": ["Firman", "Fakir"] },
+		{ "letter": "G", "words": ["Gajah", "Gorila", "Gambar"] },
+		{ "letter": "H", "words": ["Hitam", "Hantu", "Hutan"] },
+		{ "letter": "I", "words": ["Ikan", "Itik", "Iman"] },
+		{ "letter": "J", "words": ["Juga", "Jari", "Jerapah", "Jambu"] },
+		{ "letter": "K", "words": ["Kuas", "Kaki", "Kawan"] },
+		{ "letter": "L", "words": ["Lama", "Lele", "Lupa", "Lampu"] },
+		{ "letter": "M", "words": ["Makan", "Mandi", "Macan", "Musang"] },
+		{ "letter": "N", "words": ["Nama", "Nyamuk", "Nila"] },
+		{ "letter": "O", "words": ["Orang", "Odol", "Ojek"] },
+		{ "letter": "P", "words": ["Pintar", "Parkir", "Paman"] },
+		{ "letter": "Q", "words": ["Quran"] },
+		{ "letter": "R", "words": ["Rumah", "Racun", "Ragi"] },
+		{ "letter": "S", "words": ["Sapi", "Suap", "Sapu"] },
+		{ "letter": "T", "words": ["Titik", "Tahu", "Tukar", "Tempe", "Tuan"] },
+		{ "letter": "U", "words": ["Udang", "Ubi", "Untung"] },
+		{ "letter": "V", "words": ["Vampir", "Vas Bunga"] },
+		{ "letter": "W", "words": ["Waktu", "Wadah", "Wakil"] },
+		{ "letter": "X", "words": [] },
+		{ "letter": "Y", "words": ["Yakin", "Yaitu", "Yogurt"] },
+		{ "letter": "Z", "words": ["Zaitun", "Zebra", "Zaman"] }
+	]
+}
