@@ -17,7 +17,7 @@
 <button
 	class="mt-3 mb-2 hover:underline inline-block"
 	class:text-red-600={cancel}
-	clas:text-teal-900={!cancel}
+	class:text-teal-900={!cancel}
 	on:click|preventDefault={clickHandle}
 >
 	<i class="ld-arrow-left text-lg inline-block align-middle" />
