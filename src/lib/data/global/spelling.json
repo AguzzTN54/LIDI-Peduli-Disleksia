@@ -1,0 +1,8 @@
+{
+	"spells": [
+		{
+			"category": "animal",
+			"list": ["ayam", "burung", "ikan", "kepiting", "kucing", "tikus", "ular"]
+		}
+	]
+}

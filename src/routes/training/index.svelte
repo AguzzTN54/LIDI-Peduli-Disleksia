@@ -3,11 +3,11 @@
 	import Header from '$lib/components/header.svelte';
 
 	const category = [
-		{ pic: '', name: 'Mengenal Huruf', path: '/huruf' },
-		{ pic: '', name: 'Mengenal Angka', path: '/angka' },
-		{ pix: '', name: 'Mengeja Kata', path: '/mengeja' },
-		{ pix: '', name: 'Berhitung', path: '/berhitung' },
-		{ pix: '', name: 'Mengenal Objek', path: '/objek' }
+		{ pic: '/images/alpha/A.png', name: 'Mengenal Huruf', path: '/huruf' },
+		{ pic: '/images/number/5.png', name: 'Mengenal Angka', path: '/angka' },
+		{ pic: '/images/alpha/A.png', name: 'Mengeja Kata', path: '/mengeja' },
+		{ pic: '/images/alpha/A.png', name: 'Berhitung', path: '/berhitung' },
+		{ pic: '/images/alpha/A.png', name: 'Mengenal Objek', path: '/objek' }
 	];
 </script>
 
@@ -19,14 +19,19 @@
 	<div class="w-full h-full bg-white/[.5] backdrop-blur-md flex flex-col relative">
 		<Header />
 
-		<div class="flex flex-wrap w-[900px] max-w-[90%] justify-center ml-auto mr-auto mt-5">
-			{#each category as { name, path }}
-				<div class="w-full md:w-1/2 pl-1 pr-1 mb-1">
+		<div class="flex flex-wrap w-[1100px] max-w-[90%] justify-center ml-auto mr-auto mt-5">
+			{#each category as { name, path, pic }}
+				<div class="w-full md:w-1/2 px-3 my-2">
 					<a
-						class="pl-3 pr-3 pt-4 pb-4 bg-white/80 border-b-2 border-teal-500 block hover:bg-white transition-all"
+						class="px-4 h-28 text-2xl uppercase bg-white/80 border-b-2 border-teal-500 flex items-center hover:bg-white transition-all relative rounded-xl active:scale-95 overflow-hidden"
 						href="/training{path}"
 					>
-						{name}
+						<span>{name} </span>
+						<img
+							src={pic}
+							alt={name}
+							class="absolute top-[70%] -translate-y-1/2 -right-[5%] w-[20%] opacity-25"
+						/>
 					</a>
 				</div>
 			{/each}
