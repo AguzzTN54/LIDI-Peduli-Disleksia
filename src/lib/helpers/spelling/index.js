@@ -1,11 +1,16 @@
 import { spells } from '$lib/data/global/spelling.json';
 import { letters } from '$lib/data/materi/letters.json';
 import { getMultipleRandomItem, getRandomItem } from '../random';
+import { terbilang } from '../terbilang';
 
 let spellWordList = [];
 spells.forEach(({ category, list }) => {
-	const x = list.map((val) => ({ item: val, category }));
-	spellWordList = x;
+	const x = list.map((val) => {
+		let item = category === 'number' ? terbilang(val).toLowerCase() : val;
+		let number = category === 'number' ? val : null;
+		return { item, category, number };
+	});
+	spellWordList = [...spellWordList, ...x];
 });
 
 const removeDuplicateLetter = (text) => {
@@ -29,12 +34,12 @@ const getLetterExluded = (textArr) => {
 };
 
 const getItem = () => {
-	const { item, category } = getRandomItem(spellWordList);
+	const { item, category, number } = getRandomItem(spellWordList);
 	const filterDuplicateL = removeDuplicateLetter(item);
 	const textExcluded = getLetterExluded(filterDuplicateL);
-	const rand = [...filterDuplicateL, ...textExcluded].sort(() => Math.random() - 0.5);
+	const letterList = [...filterDuplicateL, ...textExcluded].sort(() => Math.random() - 0.5);
 
-	const data = { category, word: item, letterList: rand };
+	const data = { category, word: item, letterList, number };
 	return data;
 };
 

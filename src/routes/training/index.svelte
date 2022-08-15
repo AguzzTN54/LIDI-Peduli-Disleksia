@@ -5,9 +5,8 @@
 	const category = [
 		{ pic: '/images/alpha/A.png', name: 'Mengenal Huruf', path: '/huruf' },
 		{ pic: '/images/number/5.png', name: 'Mengenal Angka', path: '/angka' },
-		{ pic: '/images/alpha/A.png', name: 'Mengeja Kata', path: '/mengeja' },
-		{ pic: '/images/alpha/A.png', name: 'Berhitung', path: '/berhitung' },
-		{ pic: '/images/alpha/A.png', name: 'Mengenal Objek', path: '/objek' }
+		{ pic: '/images/alpha/X.png', name: 'Mengeja Kata', path: '/mengeja' },
+		{ pic: '/images/number/1.png', name: 'Berhitung', path: '/berhitung' }
 	];
 </script>
 

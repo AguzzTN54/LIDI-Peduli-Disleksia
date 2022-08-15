@@ -3,9 +3,9 @@
 	import Header from '$lib/components/header.svelte';
 	import { getItem } from '$lib/helpers/spelling/index';
 
-	let category, word, letterList;
+	let category, word, letterList, number;
 	let content = getItem();
-	$: ({ category, word, letterList } = content);
+	$: ({ category, word, letterList, number } = content);
 
 	let userAnswer = [];
 	let wrongAnswer = false;
@@ -73,7 +73,7 @@
 				>
 					<i class="ld-reload" />
 				</button>
-				<img src="/images/{category}/{word}.png" alt="Huruf" />
+				<img src="/images/{category}/{number || word}.png" alt="Huruf" />
 				<!-- <div class="px-2 text-center">{word}</div> -->
 			</div>
 			<div class="flex">
