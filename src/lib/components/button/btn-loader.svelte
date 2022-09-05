@@ -1,5 +1,5 @@
 <script>
-	import Ellipsis from '../loader-ellipsis.svelte';
+	import Ellipsis from '../loader/loader-ellipsis.svelte';
 
 	export let twClass = '';
 	export let loading = false;

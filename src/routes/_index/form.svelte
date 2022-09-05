@@ -8,7 +8,7 @@
 	import firestore from '$lib/firebase/firestore';
 	import { dashToSpace } from '$lib/helpers/dashToSpace';
 	import BtnLoader from '$lib/components/button/btn-loader.svelte';
-	import LoaderEllipsis from '$lib/components/loader-ellipsis.svelte';
+	import LoaderEllipsis from '$lib/components/loader/loader-ellipsis.svelte';
 
 	export let formType;
 

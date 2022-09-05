@@ -8,10 +8,9 @@
 	];
 
 	const menu = [
-		{ pic: 'game', text: 'Permainan' },
-		{ pic: 'account', text: 'Profil' },
-		{ pic: 'history', text: 'Riwayat' },
-		{ pic: 'guide', text: 'Panduan' },
+		// { pic: 'game', text: 'Permainan' },
+		{ pic: 'history', text: 'Riwayat', href: '/riwayat' },
+		{ pic: 'guide', text: 'Panduan', href: '/panduan' },
 		{ pic: 'log-out', text: 'Keluar' }
 	];
 </script>
@@ -49,8 +48,11 @@
 		{/each}
 		<div class="w-full mt-4" />
 
-		{#each menu as { pic, text }}
-			<div class="w-1/2 sm:w-4/12 md:w-3/12 lg:w-1/5 p-2 md:p-3 lg:max-w-[200px] aspect-square">
+		{#each menu as { pic, text, href }}
+			<a
+				{href}
+				class="w-1/2 sm:w-4/12 md:w-3/12 lg:w-1/5 p-2 md:p-3 lg:max-w-[200px] aspect-square"
+			>
 				<div
 					class="bg-white/[.8] p-5 rounded-lg w-full text-center hover:shadow-lg hover:bg-white transition-all active:scale-95"
 				>
@@ -63,7 +65,7 @@
 						{text}
 					</caption>
 				</div>
-			</div>
+			</a>
 		{/each}
 	</div>
 </div>
