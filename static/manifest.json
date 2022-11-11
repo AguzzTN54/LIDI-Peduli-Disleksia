@@ -1,0 +1,85 @@
+{
+	"name": "LIDI - Peduli Disleksia",
+	"short_name": "LIDI",
+	"theme_color": "#87cdab",
+	"background_color": "#87cdab",
+	"display": "standalone",
+	"description": "Tes dan Latih Kemampuan Anak Dalam Mengenal Angka dengan lebih mudah",
+	"orientation": "portrait",
+	"scope": "/",
+	"start_url": "/?pwa=true",
+	"icons": [
+		{
+			"src": "icons/icon-72x72.png",
+			"sizes": "72x72",
+			"type": "image/png"
+		},
+		{
+			"src": "icons/icon-96x96.png",
+			"sizes": "96x96",
+			"type": "image/png"
+		},
+		{
+			"src": "icons/icon-128x128.png",
+			"sizes": "128x128",
+			"type": "image/png"
+		},
+		{
+			"src": "icons/icon-144x144.png",
+			"sizes": "144x144",
+			"type": "image/png"
+		},
+		{
+			"src": "icons/icon-152x152.png",
+			"sizes": "152x152",
+			"type": "image/png"
+		},
+		{
+			"src": "icons/icon-192x192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "icons/icon-384x384.png",
+			"sizes": "384x384",
+			"type": "image/png"
+		},
+		{
+			"src": "icons/icon-512x512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	],
+	"screenshots": [
+		{
+			"sizes": "652x1412",
+			"src": "/images/screenshots/image1.jpeg",
+			"label": "Section 1",
+			"type": "image/jpeg"
+		},
+		{
+			"sizes": "652x1412",
+			"src": "/images/screenshots/image2.jpeg",
+			"label": "Section 2",
+			"type": "image/jpeg"
+		},
+		{
+			"sizes": "652x1412",
+			"src": "/images/screenshots/image3.jpeg",
+			"label": "Section 3",
+			"type": "image/jpeg"
+		},
+		{
+			"sizes": "652x1412",
+			"src": "/images/screenshots/image4.jpeg",
+			"label": "Section 4",
+			"type": "image/jpeg"
+		},
+		{
+			"sizes": "652x1412",
+			"src": "/images/screenshots/image5.jpeg",
+			"label": "Section 5",
+			"type": "image/jpeg"
+		}
+	]
+}
